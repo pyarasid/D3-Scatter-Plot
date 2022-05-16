@@ -54,6 +54,14 @@ yScale= d3.scaleLinear()
     .nice()
 
 // Draw data
+const dots= bound.selectAll("circle")
+    .data(dataset)
+    .enter().append("circle")
+    .attr("cx", d=> xScale(xAccessor(d)))
+    .attr("cy", d=> yScale(yAccessor(d)))
+    .attr("r", 5)
+    .attr("fill", "darkgrey")
+
 
 
 
